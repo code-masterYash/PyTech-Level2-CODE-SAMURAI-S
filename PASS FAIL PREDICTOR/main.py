@@ -11,16 +11,16 @@ while True:
     try:
         choice = int(input("Enter your choice: "))
     except ValueError:
-        print("❌ Invalid input! Enter a number.")
+        print(" Invalid input! Enter a number.")
         continue
 
     if choice == 1:
         accuracy = predictor.train_model()
         if accuracy is None:
-            print("❌ Dataset must contain both PASS and FAIL students.")
+            print(" Dataset must contain both PASS and FAIL students.")
         else:
-            print(f"✅ Model Trained Successfully")
-            print(f"📊 Accuracy: {accuracy:.2f}")
+            print(f" Model Trained Successfully")
+            print(f" Accuracy: {accuracy:.2f}")
 
     elif choice == 2:
         try:
@@ -29,14 +29,15 @@ while True:
             english = int(input("Enter English marks: "))
 
             result = predictor.predict_result(math, science, english)
-            print(f"🎯 Prediction Result: {result}")
+            print(f" Prediction Result: {result}")
 
         except ValueError:
-            print("❌ Enter valid numeric marks.")
+            print(" Enter valid numeric marks.")
 
     elif choice == 3:
-        print("👋 Exiting Program")
+        print("Exiting Program")
         break
 
     else:
-        print("❌ Invalid choice. Select 1–3.")
+
+        print(" Invalid choice. Select 1–3.")
